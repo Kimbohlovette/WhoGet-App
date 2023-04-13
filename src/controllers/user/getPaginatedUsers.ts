@@ -5,7 +5,7 @@ export const getPaginatedUsers = async (req: Request, res: Response) => {
 	const limit =
 		Number(req.query['limit']) > 0 ? Number(req.query['limit']) : 10 || 10;
 	const page =
-		Number(req.query['page']) > 0 ? Number(req.query['page']) : 10 || 1;
+		Number(req.query['page']) > 0 ? Number(req.query['page']) : 1 || 1;
 	try {
 		const users = (
 			await User.find({})
