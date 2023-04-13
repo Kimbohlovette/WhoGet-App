@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
 
-const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: Request, res: Response) => {
 	const id = String(req.params['id']);
 	if (!id) {
 		return res.status(400).json({
