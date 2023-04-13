@@ -3,13 +3,6 @@ import { Ask } from '../../models/askModel';
 
 export const getAsksByCategory = async (req: Request, res: Response) => {
 	const categoryId = req.params['categoryId'];
-	if (!categoryId) {
-		return res.status(404).json({
-			success: false,
-			message: 'resource not found',
-		});
-	}
-
 	try {
 		const asks = (await Ask.find({ categoryId: categoryId })).map(
 			(ask) => ({
