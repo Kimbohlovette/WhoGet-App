@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { Ask } from '../../models/askModel';
 
 export const getAsksByCategory = async (req: Request, res: Response) => {
-	const categoryId = req.params['categoryId'];
+	const categoryId = req.params['id'];
 	try {
 		const asks = (await Ask.find({ categoryId: categoryId })).map(
 			(ask) => ({
