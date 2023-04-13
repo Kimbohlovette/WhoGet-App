@@ -20,7 +20,8 @@ export const createAsk = async (req: Request, res: Response) => {
 				.status(400)
 				.json({ success: false, message: 'userId is not valid' });
 		}
-	} catch {
+	} catch (error) {
+		console.log(error);
 		res.status(404).json({
 			success: false,
 			message: 'resource does not exist',

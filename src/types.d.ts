@@ -1,18 +1,19 @@
 export interface AskType {
-    id: string;
+	id: string;
 	message: string;
 	categoryId: string;
 	userId: string;
 	expirationDate: string;
+	createdAt: string;
 	imageUrl: string;
 	location?: string;
 }
 
 export interface UserType {
-    id: string;
+	id: string;
 	name: string;
 	phoneNumber: string;
 	email: string;
 	role: 'user' | 'admin';
-    profileImage: 'string';
+	profileImage: 'string';
 }
