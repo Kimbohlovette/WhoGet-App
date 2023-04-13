@@ -31,9 +31,4 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 			.status(400)
 			.json({ success: false, message: 'bad request body' });
 	}
-	res.status(200).json({
-		success: true,
-		message: 'get ask operation successful',
-		asks: [],
-	});
 };
