@@ -1,8 +1,10 @@
 import express from 'express';
-import { getAllAsks } from '../controllers/ask/getAllAsks';
+import { getPagenatedAsks } from '../controllers/ask/getPagenatedAsks';
+import { createAsk } from '../controllers/ask/createAsk';
 
 const router = express.Router();
 
-router.get('/', getAllAsks);
+router.get('/', getPagenatedAsks);
+router.post('/', createAsk);
 
 export default router;

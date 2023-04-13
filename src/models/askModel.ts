@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 
 const AskSchema = new mongoose.Schema(
 	{
+		userId: {
+			type: String,
+			required: [true, 'UserId field cannot be empty.'],
+		},
 		message: {
 			type: String,
 			required: [true, 'Name field cannot be empty.'],
@@ -9,6 +13,10 @@ const AskSchema = new mongoose.Schema(
 		expirationDate: {
 			type: Date,
 			required: [true, 'Expiration date field cannot be empty.'],
+		},
+		categoryId: {
+			type: String,
+			required: [true, 'Category field cannot be empty.'],
 		},
 		location: {
 			type: String,
