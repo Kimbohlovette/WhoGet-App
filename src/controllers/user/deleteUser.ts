@@ -6,7 +6,7 @@ export const deleteUser = async (req: Request, res: Response) => {
 	if (!id) {
 		return res.status(400).json({
 			success: false,
-			message: 'delete operation successful',
+			message: 'bad request body',
 		});
 	}
 	try {
