@@ -7,6 +7,7 @@ export interface AskType {
 	createdAt: string;
 	imageUrl: string;
 	location?: string;
+	activities?: AskActivityType[];
 }
 
 export interface UserType {
@@ -16,4 +17,15 @@ export interface UserType {
 	email: string;
 	role: 'user' | 'admin';
 	profileImage: 'string';
+	activities?: UserActivityType[];
+}
+
+export interface AskActivityType {
+	userId: string;
+	dateResponded: string;
+}
+
+export interface UserActivityType {
+	askId: string;
+	date: string;
 }

@@ -26,6 +26,14 @@ const AskSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'Image Url field cannot be empty.'],
 		},
+		activities: {
+			type: Array,
+			required: false,
+		},
+		status: {
+			type: String,
+			required: [true, 'Ask status field cannot be empty.'],
+		},
 	},
 	{ timestamps: true }
 );

@@ -22,6 +22,14 @@ const UserSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'Profile Image Url field cannot be empty.'],
 		},
+		status: {
+			type: String,
+			required: [true, 'User status field cannot be empty.'],
+		},
+		activities: {
+			type: String,
+			required: false,
+		},
 	},
 	{ timestamps: true }
 );
