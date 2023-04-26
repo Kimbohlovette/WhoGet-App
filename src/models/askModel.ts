@@ -37,7 +37,7 @@ const AskSchema = new mongoose.Schema(
 	},
 	{ timestamps: true }
 );
-
+AskSchema.index({ message: 'text', location: 'text', status: 'text' });
 const Ask = mongoose.model('Ask', AskSchema);
 
 export { Ask };

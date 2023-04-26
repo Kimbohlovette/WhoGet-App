@@ -6,5 +6,6 @@ const CategorySchema = new mongoose.Schema({
 		required: [true, 'name field cannot be empty.'],
 	},
 });
+CategorySchema.index({ name: 'text' });
 
 export const Category = mongoose.model('Category', CategorySchema);
