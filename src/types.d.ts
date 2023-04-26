@@ -8,6 +8,7 @@ export interface AskType {
 	imageUrl: string;
 	location?: string;
 	activities?: AskActivityType[];
+	status: string;
 }
 
 export interface UserType {

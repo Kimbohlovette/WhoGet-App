@@ -26,7 +26,9 @@ export const createUser = async (req: Request, res: Response) => {
 				phoneNumber: newUser.phoneNumber,
 				email: newUser.phoneNumber,
 				role: newUser.role,
-                profileImage: newUser.profileImage,
+				profileImage: newUser.profileImage,
+				activities: newUser.activities,
+				createdAt: newUser.createdAt.toLocaleTimeString(),
 			},
 		});
 	} catch {

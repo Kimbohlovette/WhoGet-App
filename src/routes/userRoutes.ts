@@ -4,6 +4,7 @@ import { getPaginatedUsers } from '../controllers/user/getPaginatedUsers';
 import { getUserById } from '../controllers/user/getUserById';
 import { updateUser } from '../controllers/user/updateUser';
 import { deleteUser } from '../controllers/user/deleteUser';
+import { getAsksByUserId } from '../controllers/user/getAsksByUserId';
 
 const router = express.Router();
 
@@ -12,5 +13,6 @@ router.get('/', getPaginatedUsers);
 router.get('/:id', getUserById);
 router.delete('/:id', deleteUser);
 router.patch('/:id', updateUser);
+router.get('/:id/asks', getAsksByUserId);
 
 export default router;

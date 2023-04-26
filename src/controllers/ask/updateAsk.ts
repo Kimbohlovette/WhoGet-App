@@ -21,7 +21,7 @@ export const updateAsk = async (req: Request, res: Response) => {
 			return res.status(201).json({
 				success: true,
 				message: 'update operation successful',
-				deleted: updated.id.toString(),
+				updated: updated.id.toString(),
 			});
 		}
 	} catch (error) {

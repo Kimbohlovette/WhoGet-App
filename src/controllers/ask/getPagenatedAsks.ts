@@ -7,7 +7,9 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 	const { limit = PAGE_LIMIT, page = 1 } = req.query;
 	try {
 		const asks: AskType[] = (
-			await Ask.find({}).limit(+limit).skip(((+page-1)*1))
+			await Ask.find({})
+				.limit(+limit)
+				.skip((+page - 1) * 1)
 		).map((ask) => {
 			return {
 				id: ask._id.toString(),
@@ -18,11 +20,12 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 				imageUrl: ask.imageUrl,
 				categoryId: ask.categoryId,
 				userId: ask.userId,
+				status: ask.status,
 			};
 		});
 		return res.status(200).json({
 			success: true,
-			message: 'get ask operation succesful',
+			message: 'fetch operation succesful',
 			asks,
 		});
 	} catch (error) {

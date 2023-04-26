@@ -18,6 +18,8 @@ export const getPaginatedUsers = async (req: Request, res: Response) => {
 			createdAt: user.createdAt,
 			role: user.role,
 			profileImage: user.profileImage,
+			activities: user.activities,
+			status: user.status,  
 		}));
 		return res.status(200).json({
 			success: true,

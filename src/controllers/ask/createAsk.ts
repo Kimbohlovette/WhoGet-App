@@ -35,6 +35,7 @@ export const createAsk = async (req: Request, res: Response) => {
 		location: payload.location,
 		userId: payload.userId,
 		categoryId: payload.categoryId,
+		status: payload.status,
 	});
 	return res.status(201).json({
 		success: true,
