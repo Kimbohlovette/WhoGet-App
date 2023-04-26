@@ -27,10 +27,12 @@ export const getUserById = async (
 				user: {
 					id: user._id.toString(),
 					name: user.name,
-                    email: user.email,
-                    profileImage: user.profileImage,
-                    role: user.role,
-                    
+					email: user.email,
+					profileImage: user.profileImage,
+					role: user.role,
+					status: user.status,
+					activities: user.activities,
+					createdAt: user.createdAt,
 				},
 			});
 		}

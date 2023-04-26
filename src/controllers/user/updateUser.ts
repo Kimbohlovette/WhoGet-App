@@ -29,6 +29,7 @@ export const updateUser = async (req: Request, res: Response) => {
 					role: updated.role,
 					activities: updated.activities,
 					status: updated.status,
+					updatedAt: updated.updatedAt,
 				},
 			});
 		}
