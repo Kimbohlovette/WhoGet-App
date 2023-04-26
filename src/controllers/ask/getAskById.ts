@@ -29,6 +29,8 @@ export const getAskById = async (req: Request, res: Response) => {
 					imageUrl: ask.imageUrl,
 					categoryId: ask.categoryId,
 					userId: ask.userId,
+					status: ask.status,
+					activities: ask.activities
 				},
 			});
 		}

@@ -3,6 +3,7 @@ import askRoutes from './routes/askRoutes';
 import userRoutes from './routes/userRoutes';
 import categoryRoutes from './routes/categoryRoutes';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 const app = express();
 
@@ -21,6 +22,11 @@ mongoose
 
 app.use(express.static('./public'));
 app.use(express.json());
+app.use(
+	cors({
+		origin: '*',
+	})
+);
 
 app.use('/api/v1/asks', askRoutes);
 app.use('/api/v1/users', userRoutes);
