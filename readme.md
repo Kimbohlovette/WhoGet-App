@@ -141,3 +141,44 @@ This endpoint returns an object with a success massage and the newly created ask
     }
 }
 ```
+### Update an Ask
+Method: `PATCH`
+```
+localhost:5000/api/v1/asks/643791b25e5e075183257f15
+```
+Endpoint to update a single Ask item in the database. It takes a request body (payload) which contains fields that are to be updated, updates just those fields in the database and returns the newly updated Ask.
+
+Example request body 👇
+
+```
+{
+    "message": "I need a Full Stack Web developer. The applicant should be comfortable working remotely, has at least 2 years of experience in React, Redux, Express, MongoDB. Knowledge of PostGreSQL is a plus.",
+    "location": "Douala",
+    "expirationDate": "Tue May 25 2023",
+    "userId": "64378d001c6d5c18ddd79514"
+
+}
+```
+Server response 👇
+```
+{
+    "success": true,
+    "message": "update operation successful",
+    "updated": "644a97b7f4bb74db2e2806fb"
+}
+```
+Notice that the expiration date has changed, same with the location and the message.
+
+### Delete an Ask
+Method: `DELETE`
+```
+localhost:5000/api/v1/asks/643791b25e5e075183257f15
+```
+Endpoint to deletee a single Ask from the database. It takes a request parameter `id` (the user id) and returns the ID of the deleted ask.
+A sample delete response is as shown below.
+```
+{
+    "success": true,
+    "deletedId": 643791b25e5e075183257f15
+}
+```
