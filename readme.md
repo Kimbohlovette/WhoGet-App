@@ -74,4 +74,39 @@ If no asks are found, the server returns an empty array.
 }
 ```
 
-
+### Fetch one Ask by ID
+Method: `GET`
+```
+localhost:5000/api/v1/asks/643791b25e5e075183257f15
+```
+Endpoint to fetch a single ask by ID. It takes the user ID as a request parameter and response with a JSON object which looks like below.
+```
+{
+    "success": true,
+    "message": "get ask operation successful",
+    "ask": {
+        "id": "643791b25e5e075183257f15",
+        "message": "I need brand new Pixel 4xl 128GB in Buea Asap",
+        "expirationDate": "Sat Apr 15 2023",
+        "createdAt": "Thu Apr 13 2023",
+        "locaton": "Limbe",
+        "imageUrl": "path/to/askImage.png",
+        "categoryId": "64383abb4413b4561f3b9d33",
+        "userId": "64378d001c6d5c18ddd79514",
+        "status": "visible",
+        "activities": []
+    }
+}
+```
+If the `ask` with given ID is not found it returns a `404` error response.
+```
+{
+    "success": false,
+    "message": "the request params is not valid"
+}
+```
+### Fetch one Ask by ID
+Method: `GET`
+```
+localhost:5000/api/v1/asks/643791b25e5e075183257f15
+```
