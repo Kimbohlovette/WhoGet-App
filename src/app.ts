@@ -5,15 +5,21 @@ import categoryRoutes from './routes/categoryRoutes';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-const app = express();
+require('dotenv').config();
+const port = process.env.PORT || 5000;
+const dbUserName = process.env['MONGODB_NAME'];
+const mongodbPwd = process.env['MONGODB_PWD'];
+const mongodbAppName = process.env['MONGODB_APPNAME'];
+const mongodbDatabaseName = process.env['MONGODB_DBNAME'];
 
+const mongoConnectionPath = `mongodb+srv://${dbUserName}:${mongodbPwd}@${mongodbAppName}.mongodb.net/${mongodbDatabaseName}?retryWrites=true&w=majority`;
+
+const app = express();
 mongoose
-	.connect(
-		'mongodb+srv://kimbohlovette:CqaluLRZNBZNKrmS@fitnesscoachdb.8a1ynfl.mongodb.net/who-get?retryWrites=true&w=majority'
-	)
+	.connect(mongoConnectionPath)
 	.then(() => {
-		app.listen(5000, () => {
-			console.log('Listening on port 5000....');
+		app.listen(port, () => {
+			console.log(`Listening on port ${port}...`);
 		});
 	})
 	.catch((error) => {
