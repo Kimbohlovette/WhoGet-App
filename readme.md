@@ -183,4 +183,36 @@ A sample delete response is as shown below.
 }
 ```
 
-## User
+### Create a single User
+Method: `POST`
+```
+localhost:5000/api/v1/users
+```
+The endpoint to create a user. It takes a request body which consists of a user object (payload) and returns the newly created user.
+Example request body 👇
+```
+{
+    "name": "Nfor Marie",
+    "phoneNumber": "691315183",
+    "email": "nformarie@gmail.com",
+    "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+    "role": "user",
+    "status": "active"
+}
+```
+Example response body 👇
+```
+{
+    "sucess": true,
+    "message": "create user operation successful",
+    "newUser": {
+        "id": "644ada78cb176502d3ed1c22",
+        "name": "Nfor Marie",
+        "phoneNumber": 691315183,
+        "email": "nformarie@gmail.com",
+        "role": "user",
+        "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+        "createdAt": "9:26:32 PM"
+    }
+}
+```
