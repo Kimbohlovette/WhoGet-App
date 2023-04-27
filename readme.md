@@ -174,7 +174,7 @@ Method: `DELETE`
 ```
 localhost:5000/api/v1/asks/643791b25e5e075183257f15
 ```
-Endpoint to deletee a single Ask from the database. It takes a request parameter `id` (the user id) and returns the ID of the deleted ask.
+Endpoint to delete a single Ask from the database. It takes a request parameter `id` (the user id) and returns the ID of the deleted ask.
 A sample delete response is as shown below.
 ```
 {
@@ -182,3 +182,5 @@ A sample delete response is as shown below.
     "deletedId": 643791b25e5e075183257f15
 }
 ```
+
+## User
