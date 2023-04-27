@@ -7,7 +7,7 @@ export const createUser = async (req: Request, res: Response) => {
 	if (
 		payload.name === '' ||
 		payload.email === '' ||
-		payload.phoneNumber === 'empty' ||
+		payload.phoneNumber === '' ||
 		!payload.role
 	) {
 		return res
@@ -24,7 +24,7 @@ export const createUser = async (req: Request, res: Response) => {
 				id: newUser._id,
 				name: newUser.name,
 				phoneNumber: newUser.phoneNumber,
-				email: newUser.phoneNumber,
+				email: newUser.email,
 				role: newUser.role,
 				profileImage: newUser.profileImage,
 				activities: newUser.activities,
@@ -32,7 +32,7 @@ export const createUser = async (req: Request, res: Response) => {
 			},
 		});
 	} catch {
-		res.status(400).json({
+		return res.status(400).json({
 			success: false,
 			message: 'Unable to process request',
 		});
