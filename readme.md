@@ -105,8 +105,39 @@ If the `ask` with given ID is not found it returns a `404` error response.
     "message": "the request params is not valid"
 }
 ```
-### Fetch one Ask by ID
-Method: `GET`
+### Create an Ask
+Method: `POST`
 ```
-localhost:5000/api/v1/asks/643791b25e5e075183257f15
+localhost:5000/api/v1/asks
+```
+This endpoint is used to create an Ask. It takes a payload (Ask object), use it to create an Ask document on the database and returns a new Ask ojbect
+Example request body 👇
+```
+{
+    "message": "I need a Full Stack Web developer. He should be based in Bamenda, has at least 2 years of experience in React, Redux, Express, MongoDB. Knowledge of PostGreSQL is a plus.",
+    "categoryId": "644a978cf4bb74db2e2806f8",
+    "location": "Bemenda",
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+    "expirationDate": "Tue Apr 25 2023",
+    "status": "visible",
+    "userId": "64378d001c6d5c18ddd79514"
+
+}
+```
+This endpoint returns an object with a success massage and the newly created ask as below 👇
+
+```
+{
+    "success": true,
+    "message": "ask successfully created",
+    "newAsk": {
+        "id": "644a97b7f4bb74db2e2806fb",
+        "message": "I need a Full Stack Web developer. He should be based in Bamenda, has at least 2 years of experience in React, Redux, Express, MongoDB. Knowledge of PostGreSQL is a plus.",
+        "categoryId": "644a978cf4bb74db2e2806f8",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+        "location": "Bemenda",
+        "userId": "64378d001c6d5c18ddd79514",
+        "createdAt": "2023-04-27T15:41:43.106Z"
+    }
+}
 ```
