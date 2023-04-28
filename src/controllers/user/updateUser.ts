@@ -30,6 +30,7 @@ export const updateUser = async (req: Request, res: Response) => {
 					activities: updated.activities,
 					status: updated.status,
 					updatedAt: updated.updatedAt,
+					...payload,
 				},
 			});
 		}
