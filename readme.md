@@ -374,4 +374,11 @@ Method: `POST`
 ```
 localhost:5000/api/v1/categories
 ```
-Creates a category. Receives a request body name of the category (`e.g` `{ name: "Technology" }` ) and returns the newly created category ( `e.g` `{ id: dfkdfhg49dfj3dffkf", name: "Technology" }`
+Creates a category. Receives a request body name of the category (`e.g` `{ name: "Technology" }` ) and returns the newly created category ( `e.g` `{ id: dfkdfhg49dfj3dffkf", name: "Technology" }`)
+
+### Delete a category
+Method: `DELETE`
+```
+localhost:5000/api/v1/categories
+```
+Deletes a category from the data store and returns the `id` of the deleted category.
