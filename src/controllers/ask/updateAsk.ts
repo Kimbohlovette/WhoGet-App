@@ -18,10 +18,34 @@ export const updateAsk = async (req: Request, res: Response) => {
 				message: 'resource not found',
 			});
 		} else {
+			const {
+				id,
+				userId,
+				message,
+				location,
+				status,
+				expirationDate,
+				createdAt,
+				imageUrl,
+				activities,
+				updatedAt,
+			} = updated;
 			return res.status(201).json({
 				success: true,
 				message: 'update operation successful',
-				updated: updated.id.toString(),
+				updated: {
+					id,
+					userId,
+					message,
+					location,
+					status,
+					expirationDate,
+					createdAt,
+					imageUrl,
+					activities,
+					updatedAt,
+					...payload,
+				},
 			});
 		}
 	} catch (error) {
