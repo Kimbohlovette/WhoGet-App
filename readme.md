@@ -310,3 +310,34 @@ Example (`localhost:5000/api/v1/users/localhost:5000/api/v1/users/6447d65c609ca7
     "numOfAsks": 1
 }
 ```
+### Update a User
+Method: `PATCH`
+```
+localhost:5000/api/v1/users/<user_id>
+```
+Endpoint to update user fields. It takes receives a request body (payload) object that contains only the user properties to be replaced. It returns the newly updated User object.
+
+Example 
+`http://localhost:5000/api/v1/users/6447d65c609ca79f62958e23`
+Request body 👇
+```
+{
+    "name": "Estella Shembum"
+}
+```
+Response 👇
+```
+{
+    "success": true,
+    "message": "update user successful",
+    "updated": {
+        "id": "6447d65c609ca79f62958e23",
+        "name": "Estella Shembum",
+        "email": "nsongstella@gmail.com",
+        "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+        "role": "user",
+        "status": "active",
+        "updatedAt": "2023-04-28T02:38:35.030Z"
+    }
+}
+```
