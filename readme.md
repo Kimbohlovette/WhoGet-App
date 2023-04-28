@@ -341,3 +341,17 @@ Response 👇
     }
 }
 ```
+### Delete a User
+Method: `DELETE`
+```
+localhost:5000/api/v1/users/<user_id>
+```
+This is the endpoint to remove a user object. It takes a request params `id` and returns the id of the deleted user object.
+
+Response for `http://localhost:5000/users/348d8er8348erdd8d438ddfg`
+```
+{
+    "success": true,
+    "deletedId": "348d8er8348erdd8d438ddfg"
+}
+```
