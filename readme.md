@@ -260,3 +260,26 @@ Example  👇
     ]
 }
 ```
+### Fetch a user by ID
+Method: `GET`
+```
+localhost:5000/api/v1/users/<user_id>
+```
+Endpont to fetch a single user by ID. It takes request parameter `id` and return a single user if found or `404` if not found.
+
+Example response for URL `localhost:5000/api/v1/users/6447d65c609ca79f62958e23`
+```
+{
+    "success": true,
+    "message": "get user successful",
+    "user": {
+        "id": "6447d65c609ca79f62958e23",
+        "name": "Nsong Stella Mesode",
+        "email": "nsongstella@gmail.com",
+        "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+        "role": "user",
+        "status": "active",
+        "createdAt": "2023-04-25T13:32:12.767Z"
+    }
+}
+```
