@@ -216,3 +216,47 @@ Example response body 👇
     }
 }
 ```
+### Fetch all users
+Method: `GET`
+```
+localhost:5000/api/v1/users?page=1&limit=3
+```
+Endpoint to fetch users in the database. It accepts query parms; `page` and `limit` for pagination.
+Returns a list of users for a particular page and page limit.
+
+Example  👇
+```
+{
+    "success": true,
+    "message": "fetch operation successful",
+    "users": [
+        {
+            "id": "6447d65c609ca79f62958e25",
+            "name": "Tatiana Manaoas",
+            "email": "tatianaman@gmail.com",
+            "createdAt": "2023-04-25T13:32:12.776Z",
+            "role": "user",
+            "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+            "status": "active"
+        },
+        {
+            "id": "6447d65c609ca79f62958e23",
+            "name": "Nsong Stella Mesode",
+            "email": "nsongstella@gmail.com",
+            "createdAt": "2023-04-25T13:32:12.767Z",
+            "role": "user",
+            "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+            "status": "active"
+        },
+        {
+            "id": "6447d65c609ca79f62958e27",
+            "name": "Tatiana Manaoas",
+            "email": "tatianaman@gmail.com",
+            "createdAt": "2023-04-25T13:32:12.780Z",
+            "role": "user",
+            "profileImage": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+            "status": "active"
+        }
+    ]
+}
+```
