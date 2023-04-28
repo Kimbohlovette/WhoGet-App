@@ -283,3 +283,30 @@ Example response for URL `localhost:5000/api/v1/users/6447d65c609ca79f62958e23`
     }
 }
 ```
+### Fetch all Asks for a single User
+Method: `GET`
+```
+localhost:5000/api/v1/users/<user_id>/asks
+```
+This endpoints returns all Asks placed by a User. It takes user's id, `id` as a request params.
+
+Example (`localhost:5000/api/v1/users/localhost:5000/api/v1/users/6447d65c609ca79f62958e23/asks`)
+```
+{
+    "success": true,
+    "message": "fetch operation successful",
+    "asks": [
+        {
+            "id": "6447f64595d4a63c6eac982d",
+            "message": "Hello everyone. I need a farmer who can supply me tomatoes on daily basis. I am in Kumba",
+            "expirationDate": "2023-04-25T15:48:13.000Z",
+            "location": "Kumba",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/whoget-assets.appspot.com/o/images%2Feyong_vanisiah.jpg?alt=media&token=bcaa0792-e2f1-4d5b-b219-16bce322a1f3",
+            "status": "visible",
+            "activities": [],
+            "createdAt": "2023-04-25T15:48:21.766Z"
+        }
+    ],
+    "numOfAsks": 1
+}
+```
