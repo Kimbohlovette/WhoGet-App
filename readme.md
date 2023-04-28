@@ -355,3 +355,23 @@ Response for `http://localhost:5000/users/348d8er8348erdd8d438ddfg`
     "deletedId": "348d8er8348erdd8d438ddfg"
 }
 ```
+### Fetch all Categories
+Method: `GET`
+```
+localhost:5000/api/v1/categories
+```
+Endpoint to fetch all categories in the database. It also gives room for pagination. That is `page` and `limit` query params can be used to limit what the user wants. It returns a list of categories.
+
+### Fetch all Asks for one category
+Method: `GET`
+```
+localhost:5000/api/v1/categories/`<category_id>`/asks
+```
+Endpoint to fetch all asks belong to a category. It receives a request parameter, `id` and returns an array of all asks that belong to that category.
+
+### Create a category
+Method: `POST`
+```
+localhost:5000/api/v1/categories
+```
+Creates a category. Receives a request body name of the category (`e.g` `{ name: "Technology" } ) and returns the newly created category ( `e.g` `{ id: dfkdfhg49dfj3dffkf", name: "Technology" }`
