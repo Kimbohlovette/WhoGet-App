@@ -15,6 +15,7 @@ export const getPaginatedUsers = async (req: Request, res: Response) => {
 			id: user._id,
 			name: user.name,
 			email: user.email,
+			phoneNumber: user.phoneNumber,
 			createdAt: user.createdAt,
 			role: user.role,
 			profileImage: user.profileImage,

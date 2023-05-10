@@ -28,6 +28,7 @@ export const getUserById = async (
 					id: user._id.toString(),
 					name: user.name,
 					email: user.email,
+					phoneNumber: user.phoneNumber,
 					profileImage: user.profileImage,
 					role: user.role,
 					status: user.status,

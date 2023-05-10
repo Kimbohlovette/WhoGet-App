@@ -25,6 +25,7 @@ export const updateUser = async (req: Request, res: Response) => {
 					id: updated._id.toString(),
 					name: updated.name,
 					email: updated.email,
+					phoneNumber: updated.phoneNumber,
 					profileImage: updated.profileImage,
 					role: updated.role,
 					activities: updated.activities,
