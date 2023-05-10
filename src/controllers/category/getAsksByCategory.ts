@@ -14,6 +14,7 @@ export const getAsksByCategory = async (req: Request, res: Response) => {
 				imageUrl: ask.imageUrl,
 				categoryId: ask.categoryId,
 				userId: ask.userId,
+				userName: ask.userName || '',
 			})
 		);
 		return res.status(200).json({

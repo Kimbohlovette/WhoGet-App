@@ -9,6 +9,8 @@ export interface AskType {
 	location?: string;
 	activities?: AskActivityType[];
 	status: string;
+	contactNumber: string;
+	userName: string;
 }
 
 export interface UserType {

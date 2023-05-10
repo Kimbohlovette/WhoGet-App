@@ -1,12 +1,13 @@
 import { Request, Response } from 'express';
 import { Ask } from '../../models/askModel';
 import { AskType } from '../../types';
+import { User } from '../../models/userModel';
 
 export const getPagenatedAsks = async (req: Request, res: Response) => {
 	const PAGE_LIMIT = 10;
 	const { limit = PAGE_LIMIT, page = 1 } = req.query;
 	try {
-		const asks: AskType[] = (
+		const asks = (
 			await Ask.find({})
 				.limit(+limit)
 				.skip((+page - 1) * 1)
@@ -20,6 +21,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 				imageUrl: ask.imageUrl,
 				categoryId: ask.categoryId,
 				userId: ask.userId,
+				userName: ask.userName || '',
 				status: ask.status,
 				activities: ask.activities,
 			};

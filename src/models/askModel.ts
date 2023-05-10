@@ -6,6 +6,14 @@ const AskSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'UserId field cannot be empty.'],
 		},
+		userName: {
+			type: String,
+			required: false,
+		},
+		contactNumber: {
+			type: String,
+			required: false,
+		},
 		message: {
 			type: String,
 			required: [true, 'Name field cannot be empty.'],
@@ -17,6 +25,10 @@ const AskSchema = new mongoose.Schema(
 		categoryId: {
 			type: String,
 			required: [true, 'Category field cannot be empty.'],
+		},
+		categoryName: {
+			type: String,
+			required: false,
 		},
 		location: {
 			type: String,

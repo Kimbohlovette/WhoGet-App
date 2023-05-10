@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Ask } from '../../models/askModel';
+import { AskType } from '../../types';
 
 export const getAsksByUserId = async (req: Request, res: Response) => {
 	const id = req.params['id'];
@@ -10,7 +11,7 @@ export const getAsksByUserId = async (req: Request, res: Response) => {
 		});
 	}
 	try {
-		const asks = await Ask.find({ userId: id });
+		const asks: AskType[] = await Ask.find({ userId: id });
 		return res.status(200).json({
 			success: true,
 			message: 'fetch operation successful',
