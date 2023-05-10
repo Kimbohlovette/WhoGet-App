@@ -24,6 +24,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 				userName: ask.userName || '',
 				status: ask.status,
 				activities: ask.activities,
+				contactNumber: ask.contactNumber || '',
 			};
 		});
 		return res.status(200).json({

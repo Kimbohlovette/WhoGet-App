@@ -15,6 +15,7 @@ export const getAsksByCategory = async (req: Request, res: Response) => {
 				categoryId: ask.categoryId,
 				userId: ask.userId,
 				userName: ask.userName || '',
+				contactNumber: ask.contactNumber || '',
 			})
 		);
 		return res.status(200).json({

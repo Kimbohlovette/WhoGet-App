@@ -36,7 +36,7 @@ const AskSchema = new mongoose.Schema(
 		},
 		imageUrl: {
 			type: String,
-			required: [true, 'Image Url field cannot be empty.'],
+			required: false,
 		},
 		activities: {
 			type: Array,
