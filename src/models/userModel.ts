@@ -14,6 +14,10 @@ const UserSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'Email field cannot be empty.'],
 		},
+		location: {
+			type: String,
+			required: [true, 'Location field cannot be empty.'],
+		},
 		profileImage: {
 			type: String,
 			required: [true, 'Profile Image Url field cannot be empty.'],

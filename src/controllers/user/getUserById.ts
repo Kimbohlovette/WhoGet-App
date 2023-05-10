@@ -31,6 +31,7 @@ export const getUserById = async (
 					phoneNumber: user.phoneNumber,
 					profileImage: user.profileImage,
 					role: user.role,
+					location: user.location,
 					status: user.status,
 					activities: user.activities,
 					createdAt: user.createdAt,

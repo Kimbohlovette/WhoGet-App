@@ -25,7 +25,7 @@ export const getAskById = async (req: Request, res: Response) => {
 					message: ask.message,
 					expirationDate: ask.expirationDate.toDateString(),
 					createdAt: ask.createdAt.toDateString(),
-					locaton: ask.location,
+					location: ask.location,
 					imageUrl: ask.imageUrl,
 					categoryId: ask.categoryId,
 					userId: ask.userId,

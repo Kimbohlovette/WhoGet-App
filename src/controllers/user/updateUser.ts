@@ -27,6 +27,7 @@ export const updateUser = async (req: Request, res: Response) => {
 					email: updated.email,
 					phoneNumber: updated.phoneNumber,
 					profileImage: updated.profileImage,
+					location: updated.location,
 					role: updated.role,
 					activities: updated.activities,
 					status: updated.status,
