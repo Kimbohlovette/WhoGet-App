@@ -11,6 +11,7 @@ export const getPaginatedUsers = async (req: Request, res: Response) => {
 			await User.find({})
 				.limit(limit)
 				.skip((page - 1) * limit)
+				.sort({ createdAt: -1 })
 		).map((user) => ({
 			id: user._id,
 			name: user.name,

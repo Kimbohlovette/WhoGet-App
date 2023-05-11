@@ -11,7 +11,9 @@ export const getAsksByUserId = async (req: Request, res: Response) => {
 		});
 	}
 	try {
-		const asks: AskType[] = await Ask.find({ userId: id });
+		const asks = await Ask.find({ userId: id }).sort({
+			createdAt: -1,
+		});
 		return res.status(200).json({
 			success: true,
 			message: 'fetch operation successful',

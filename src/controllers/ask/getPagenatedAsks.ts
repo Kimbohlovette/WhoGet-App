@@ -11,6 +11,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 			await Ask.find({})
 				.limit(+limit)
 				.skip((+page - 1) * 1)
+				.sort({ createdAt: -1 })
 		).map((ask) => {
 			return {
 				id: ask._id.toString(),
