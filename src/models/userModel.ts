@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema(
 			required: [true, 'Name field cannot be empty.'],
 		},
 		phoneNumber: {
-			type: Number,
+			type: String,
 			required: false,
 		},
 		email: {
