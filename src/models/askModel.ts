@@ -32,7 +32,7 @@ const AskSchema = new mongoose.Schema(
 		},
 		location: {
 			type: String,
-			required: [true, 'Location field cannot be empty.'],
+			required: false,
 		},
 		imageUrl: {
 			type: String,
