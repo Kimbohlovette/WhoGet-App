@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema(
 		},
 		phoneNumber: {
 			type: Number,
-			required: [true, 'Phone number field cannot be empty.'],
+			required: false,
 		},
 		email: {
 			type: String,
@@ -16,11 +16,11 @@ const UserSchema = new mongoose.Schema(
 		},
 		location: {
 			type: String,
-			required: [true, 'Location field cannot be empty.'],
+			required: false,
 		},
 		profileImage: {
 			type: String,
-			required: [true, 'Profile Image Url field cannot be empty.'],
+			required: false,
 		},
 		role: {
 			type: String,
