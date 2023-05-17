@@ -2,6 +2,7 @@ import express from 'express';
 import askRoutes from './routes/askRoutes';
 import userRoutes from './routes/userRoutes';
 import categoryRoutes from './routes/categoryRoutes';
+import searchRoutes from './routes/searchRoutes';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -37,3 +38,4 @@ app.use(
 app.use('/api/v1/asks', askRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/categories', categoryRoutes);
+app.use('/api/v1/search', searchRoutes);
