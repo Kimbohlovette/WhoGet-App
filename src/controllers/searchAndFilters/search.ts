@@ -12,14 +12,15 @@ export const search = async (req: Request, res: Response) => {
 			await Ask.find(
 				{ $text: { $search: searchKey } },
 				{ score: { $meta: 'textScore' } },
-				{ _id: 1, message: 1, createdAt: 1 }
+				{ _id: 1, message: 1, createdAt: 1, userName: 1 }
 			).sort({ score: { $meta: 'textScore' } })
 		)
 			.filter((ask) => ask.status === 'visible')
 			.map((ask) => ({
 				message: ask.message,
-				id: ask.message,
+				id: ask.id,
 				createdAt: ask.createdAt,
+				userName: ask.userName,
 			}));
 
 		const users = (
