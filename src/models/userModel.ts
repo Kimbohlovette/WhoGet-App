@@ -37,6 +37,7 @@ const UserSchema = new mongoose.Schema(
 	},
 	{ timestamps: true }
 );
+UserSchema.index({ '$**': 'text' });
 const User = mongoose.model('User', UserSchema);
 
 export { User };
