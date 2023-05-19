@@ -9,7 +9,7 @@ export const getPaginatedCategories = async (req: Request, res: Response) => {
 			await Category.find({})
 				.limit(limit)
 				.skip((page - 1) * limit)
-				.sort({ name: 1 })
+				.sort({ _id: 1, name: 1 })
 		).map((cat) => ({
 			id: cat._id,
 			name: cat.name,

@@ -6,12 +6,14 @@ import { User } from '../../models/userModel';
 export const getPagenatedAsks = async (req: Request, res: Response) => {
 	const PAGE_LIMIT = 10;
 	const { limit = PAGE_LIMIT, page = 1 } = req.query;
+	const pageNum = Number(page);
+	const pageLimit = Number(limit);
 	try {
 		const asks = (
 			await Ask.find({})
-				.limit(+limit)
-				.skip((+page - 1) * 1)
-				.sort({ createdAt: -1 })
+				.sort({ _id: 1, createdAt: -1 })
+				.skip(pageNum > 0 ? (pageNum - 1) * pageLimit : 0)
+				.limit(pageLimit)
 		).map((ask) => {
 			return {
 				id: ask._id.toString(),
