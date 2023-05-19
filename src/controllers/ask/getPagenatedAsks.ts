@@ -11,12 +11,12 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 	try {
 		const asks = (
 			await Ask.find()
-				.sort({ createdAt: -1, _id: -1 })
+				.sort({ _id: -1 })
 				.skip(pageNum > 0 ? (pageNum - 1) * pageLimit : 0)
 				.limit(pageLimit)
 		).map((ask) => {
 			return {
-				id: ask._id.getTimestamp(),
+				id: ask._id.toHexString(),
 				message: ask.message,
 				expirationDate: ask.expirationDate.toDateString(),
 				createdAt: ask.createdAt.toDateString(),
