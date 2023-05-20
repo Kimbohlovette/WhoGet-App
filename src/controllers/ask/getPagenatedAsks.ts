@@ -4,13 +4,13 @@ import { AskType } from '../../types';
 import { User } from '../../models/userModel';
 
 export const getPagenatedAsks = async (req: Request, res: Response) => {
-	const PAGE_LIMIT = 10;
-	const { limit = PAGE_LIMIT, page = 1 } = req.query;
-	const pageNum = Number(page);
-	const pageLimit = Number(limit);
+	const page = req.query.page;
+	const limit = req.query.limit;
+	const pageNum = page ? Number(page) : 1;
+	const pageLimit = limit ? Number(limit) : 15;
 	try {
 		const asks = (
-			await Ask.find()
+			await Ask.find({})
 				.sort({ _id: -1 })
 				.skip(pageNum > 0 ? (pageNum - 1) * pageLimit : 0)
 				.limit(pageLimit)
@@ -33,6 +33,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 			success: true,
 			message: 'fetch operation succesful',
 			asks,
+			size: asks.length,
 		});
 	} catch (error) {
 		console.log(error);
