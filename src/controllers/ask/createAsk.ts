@@ -29,7 +29,9 @@ export const createAsk = async (req: Request, res: Response) => {
 	}
 
 	const newAsk = await Ask.create({
-		expirationDate: payload.expirationDate,
+		expirationDate: new Date().setDate(
+			new Date().getDate() + Number(payload.expirationDate)
+		),
 		message: payload.message,
 		imageUrl: payload.imageUrl,
 		location: payload.location,
