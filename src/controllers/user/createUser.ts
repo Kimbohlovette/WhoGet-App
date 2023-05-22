@@ -21,7 +21,7 @@ export const createUser = async (req: Request, res: Response) => {
 			sucess: true,
 			message: 'create user operation successful',
 			newUser: {
-				id: newUser._id,
+				id: newUser._id.toHexString(),
 				name: newUser.name,
 				phoneNumber: newUser.phoneNumber,
 				email: newUser.email,
@@ -29,6 +29,7 @@ export const createUser = async (req: Request, res: Response) => {
 				profileImage: newUser.profileImage,
 				activities: newUser.activities,
 				createdAt: newUser.createdAt.toLocaleTimeString(),
+				location: newUser.location,
 			},
 		});
 	} catch {
