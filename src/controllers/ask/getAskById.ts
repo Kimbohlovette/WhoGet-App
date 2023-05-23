@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Ask } from '../../models/askModel';
+import { User } from '../../models/userModel';
 
 export const getAskById = async (req: Request, res: Response) => {
 	const id = req.params['id'];
@@ -17,6 +18,14 @@ export const getAskById = async (req: Request, res: Response) => {
 				message: 'resource not found',
 			});
 		} else {
+			const owner = await User.findById(ask.userId, {
+				phoneNumber: 1,
+				name: 1,
+				_id: 1,
+				email: 1,
+				location: 1,
+				profileImage: 1,
+			});
 			return res.status(200).json({
 				success: true,
 				message: 'get ask operation successful',
@@ -30,7 +39,8 @@ export const getAskById = async (req: Request, res: Response) => {
 					categoryId: ask.categoryId,
 					userId: ask.userId,
 					status: ask.status,
-					activities: ask.activities
+					activities: ask.activities,
+					owner,
 				},
 			});
 		}
