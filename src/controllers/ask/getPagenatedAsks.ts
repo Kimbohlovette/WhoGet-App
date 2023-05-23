@@ -10,7 +10,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 	const pageLimit = limit ? Number(limit) : 15;
 	try {
 		const asks = (
-			await Ask.find({})
+			await Ask.find({ status: 'visible' })
 				.sort({ _id: -1 })
 				.skip(pageNum > 0 ? (pageNum - 1) * pageLimit : 0)
 				.limit(pageLimit)

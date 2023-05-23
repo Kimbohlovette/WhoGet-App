@@ -6,7 +6,13 @@ export const filterAsks = async (req: Request, res: Response) => {
 	const location = req.query.location;
 	const expiresIn = req.query.expires;
 	try {
-		const asks = (await Ask.find({ categoryId: category, location }))
+		const asks = (
+			await Ask.find({
+				categoryId: category,
+				location,
+				status: 'visible',
+			})
+		)
 			.filter(
 				(ask) =>
 					ask.expirationDate.getDate() ===

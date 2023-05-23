@@ -11,7 +11,7 @@ export const getAsksByUserId = async (req: Request, res: Response) => {
 		});
 	}
 	try {
-		const asks = await Ask.find({ userId: id }).sort({
+		const asks = await Ask.find({ userId: id, status: 'visible' }).sort({
 			createdAt: -1,
 		});
 		return res.status(200).json({
