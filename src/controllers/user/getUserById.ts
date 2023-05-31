@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { User } from '../../models/userModel';
+import { Ask } from '../../models/askModel';
 
 export const getUserById = async (
 	req: Request,
@@ -21,6 +22,26 @@ export const getUserById = async (
 				message: 'resource not found',
 			});
 		} else {
+			const userAsks = (
+				await Ask.find(
+					{ userId: user._id.toHexString() },
+					{
+						_id: 1,
+						message: 1,
+						createdAt: 1,
+						expirationDate: 1,
+						location: 1,
+						imageUrl: 1,
+					}
+				)
+			).map((ask) => ({
+				id: ask._id.toHexString(),
+				message: ask.message,
+				location: ask.location,
+				createdAt: ask.createdAt,
+				expirationDate: ask.expirationDate,
+				imageUrl: ask.imageUrl,
+			}));
 			return res.status(200).json({
 				success: true,
 				message: 'get user successful',
@@ -35,6 +56,7 @@ export const getUserById = async (
 					status: user.status,
 					activities: user.activities,
 					createdAt: user.createdAt,
+					asks: userAsks,
 				},
 			});
 		}
