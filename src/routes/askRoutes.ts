@@ -12,7 +12,7 @@ router.get('/', getPagenatedAsks);
 router.get('/filter', filterAsks);
 router.get('/:id', getAskById);
 router.post('/', createAsk);
-router.patch('/:id', updateAsk);
+router.put('/:id', updateAsk);
 router.delete('/:id', deleteAsk);
 
 export default router;
