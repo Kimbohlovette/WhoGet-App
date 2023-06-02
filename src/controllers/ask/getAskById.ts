@@ -32,7 +32,7 @@ export const getAskById = async (req: Request, res: Response) => {
 				ask: {
 					id: ask._id.toString(),
 					message: ask.message,
-					expirationDate: ask.expirationDate.toDateString(),
+					expirationDate: ask.expirationDate?.toDateString(),
 					createdAt: ask.createdAt.toDateString(),
 					location: ask.location,
 					imageUrl: ask.imageUrl,

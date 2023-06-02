@@ -5,11 +5,13 @@ export const getAsksByCategory = async (req: Request, res: Response) => {
 	const categoryId = req.params['id'];
 	try {
 		const asks = (
-			await Ask.find({ categoryId: categoryId, status: 'visible' }).sort({ createdAt: 1 })
+			await Ask.find({ categoryId: categoryId, status: 'visible' }).sort({
+				createdAt: 1,
+			})
 		).map((ask) => ({
 			id: ask._id.toString(),
 			message: ask.message,
-			expirationDate: ask.expirationDate.toDateString(),
+			expirationDate: ask.expirationDate?.toDateString(),
 			createdAt: ask.createdAt.toDateString(),
 			locaton: ask.location,
 			imageUrl: ask.imageUrl,

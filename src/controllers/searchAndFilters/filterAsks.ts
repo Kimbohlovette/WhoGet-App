@@ -15,14 +15,14 @@ export const filterAsks = async (req: Request, res: Response) => {
 		)
 			.filter(
 				(ask) =>
-					ask.expirationDate.getDate() ===
+					ask.expirationDate?.getDate() ===
 					new Date().getDate() + Number(expiresIn)
 			)
 			.map((ask) => {
 				return {
 					id: ask._id.toHexString(),
 					message: ask.message,
-					expirationDate: ask.expirationDate.toDateString(),
+					expirationDate: ask.expirationDate?.toDateString(),
 					createdAt: ask.createdAt.toDateString(),
 					locaton: ask.location,
 					imageUrl: ask.imageUrl,
