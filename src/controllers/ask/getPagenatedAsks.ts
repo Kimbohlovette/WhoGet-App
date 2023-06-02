@@ -18,7 +18,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 			return {
 				id: ask._id.toHexString(),
 				message: ask.message,
-				expirationDate: ask.expirationDate.toDateString(),
+				expirationDate: ask.expirationDate?.toDateString(),
 				createdAt: ask.createdAt.toDateString(),
 				locaton: ask.location,
 				imageUrl: ask.imageUrl,
