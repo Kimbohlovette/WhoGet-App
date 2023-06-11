@@ -8,6 +8,8 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 	const limit = req.query.limit;
 	const pageNum = page ? Number(page) : 1;
 	const pageLimit = limit ? Number(limit) : 15;
+	const token = req.headers;
+	console.log(token);
 	try {
 		const asks = (
 			await Ask.find({ status: 'visible' })
@@ -27,6 +29,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 				userName: ask.userName || '',
 				activities: ask.activities,
 				contactNumber: ask.contactNumber || '',
+				status: ask.status,
 			};
 		});
 		return res.status(200).json({
