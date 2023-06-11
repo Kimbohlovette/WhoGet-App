@@ -5,6 +5,7 @@ import categoryRoutes from './routes/categoryRoutes';
 import searchRoutes from './routes/searchRoutes';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import { verifyAuthToken } from './middlewares/auth';
 
 require('dotenv').config();
 const port = process.env.PORT || 5000;
@@ -35,7 +36,7 @@ app.use(
 	})
 );
 
-app.use('/api/v1/asks', askRoutes);
+app.use('/api/v1/asks', verifyAuthToken, askRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/categories', categoryRoutes);
 app.use('/api/v1/search', searchRoutes);

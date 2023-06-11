@@ -5,6 +5,7 @@ import { getAskById } from '../controllers/ask/getAskById';
 import { deleteAsk } from '../controllers/ask/deleteAsk';
 import { updateAsk } from '../controllers/ask/updateAsk';
 import { filterAsks } from '../controllers/searchAndFilters/filterAsks';
+import { verifyAuthToken } from '../middlewares/auth';
 
 const router = express.Router();
 
