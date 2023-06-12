@@ -1,8 +1,5 @@
 import { Request, Response } from 'express';
 import { Ask } from '../../models/askModel';
-import { AskType } from '../../types';
-import { User } from '../../models/userModel';
-
 export const getPagenatedAsks = async (req: Request, res: Response) => {
 	const page = req.query.page;
 	const limit = req.query.limit;
@@ -30,6 +27,7 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 				status: ask.status,
 			};
 		});
+		console.log(asks);
 		return res.status(200).json({
 			success: true,
 			message: 'fetch operation succesful',

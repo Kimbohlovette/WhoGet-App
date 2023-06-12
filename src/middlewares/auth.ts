@@ -12,7 +12,6 @@ export const verifyAuthToken = (
 			code: 'invalid_header',
 		});
 	}
-
 	const parts = token.split(' ');
 	if (parts[0].toLowerCase() !== 'bearer') {
 		return res.status(401).json({
