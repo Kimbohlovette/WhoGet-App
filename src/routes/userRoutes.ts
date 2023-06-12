@@ -8,11 +8,13 @@ import { getAsksByUserId } from '../controllers/user/getAsksByUserId';
 import { getUserByEmail } from '../controllers/user/getUserByEmail';
 import { updateUserStatus } from '../controllers/user/updateUserStatus';
 import { verifyAuthToken } from '../middlewares/auth';
+import { getAllUsers } from '../controllers/user/getAllUsers';
 
 const router = express.Router();
 
 router.post('/', createUser);
 router.get('/', getPaginatedUsers);
+router.get('/all',verifyAuthToken, getAllUsers);
 router.get('/:id', getUserById);
 router.delete('/:id', deleteUser);
 router.patch('/:id', updateUser);
