@@ -34,6 +34,10 @@ const UserSchema = new mongoose.Schema(
 			type: String,
 			required: false,
 		},
+		uid: {
+			String,
+			required: true,
+		},
 	},
 	{ timestamps: true }
 );

@@ -20,6 +20,7 @@ export interface UserType {
 	email: string;
 	role: 'user' | 'admin';
 	profileImage: 'string';
+	uid: string;
 	activities?: UserActivityType[];
 }
 

@@ -8,7 +8,8 @@ export const createUser = async (req: Request, res: Response) => {
 		payload.name === '' ||
 		payload.email === '' ||
 		payload.phoneNumber === '' ||
-		!payload.role
+		!payload.role ||
+		!payload.uid
 	) {
 		return res
 			.status(400)
@@ -30,10 +31,11 @@ export const createUser = async (req: Request, res: Response) => {
 				activities: newUser.activities,
 				createdAt: newUser.createdAt.toLocaleTimeString(),
 				location: newUser.location,
+				uid: newUser.uid,
 			},
 		});
 	} catch {
-		return res.status(400).json({
+		return res.status(422).json({
 			success: false,
 			message: 'Unable to process request',
 		});
