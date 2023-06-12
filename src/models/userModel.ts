@@ -35,8 +35,8 @@ const UserSchema = new mongoose.Schema(
 			required: false,
 		},
 		uid: {
-			String,
-			required: true,
+			type: String,
+			required: [true, 'uid field is required'],
 		},
 	},
 	{ timestamps: true }

@@ -6,6 +6,7 @@ import { deleteAsk } from '../controllers/ask/deleteAsk';
 import { updateAsk } from '../controllers/ask/updateAsk';
 import { filterAsks } from '../controllers/searchAndFilters/filterAsks';
 import { updateAskStatus } from '../controllers/ask/updateAskStatus';
+import { verifyAuthToken } from '../middlewares/auth';
 
 const router = express.Router();
 
@@ -14,7 +15,7 @@ router.get('/filter', filterAsks);
 router.get('/:id', getAskById);
 router.post('/', createAsk);
 router.patch('/:id', updateAsk);
-router.patch('/:id/status', updateAskStatus);
+router.patch('/:id/status', verifyAuthToken, updateAskStatus);
 router.delete('/:id', deleteAsk);
 
 export default router;

@@ -1,4 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
+import auth from '../firebase';
+import { getAuth } from 'firebase/auth';
+import { User } from '../models/userModel';
 
 export const verifyAuthToken = (
 	req: Request,
@@ -32,7 +35,35 @@ export const verifyAuthToken = (
 		});
 	}
 	const jwt = parts[1];
-
 	//@TODO:  decode token and verify the token
-	next();
+
+	auth.verifyIdToken(jwt)
+		.then((decoded) => {
+			console.log('Decoded jwt: ', decoded);
+			User.findOne({ uid: decoded.uid }).then((user) => {
+				if (user) {
+					if (user.role !== 'admin') {
+						return res.status(400).json({
+							success: false,
+							message:
+								'Not enough permissions to access resource',
+							code: 'not_permitted',
+						});
+					}
+					return next();
+				}
+				return res.status(401).json({
+					success: false,
+					message: 'Invalid uid. Access denied',
+					code: 'invalid_uid',
+				});
+			});
+		})
+		.catch((error) => {
+			// Handle error
+			return res.status(401).json({
+				message: error.message,
+				code: error.code,
+			});
+		});
 };
