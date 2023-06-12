@@ -39,7 +39,6 @@ export const verifyAuthToken = (
 
 	auth.verifyIdToken(jwt)
 		.then((decoded) => {
-			console.log('Decoded jwt: ', decoded);
 			User.findOne({ uid: decoded.uid }).then((user) => {
 				if (user) {
 					if (user.role !== 'admin') {

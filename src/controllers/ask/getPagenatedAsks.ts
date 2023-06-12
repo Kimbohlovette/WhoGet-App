@@ -27,7 +27,6 @@ export const getPagenatedAsks = async (req: Request, res: Response) => {
 				status: ask.status,
 			};
 		});
-		console.log(asks);
 		return res.status(200).json({
 			success: true,
 			message: 'fetch operation succesful',
