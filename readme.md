@@ -22,6 +22,9 @@ MONGODB_DBNAME='database name'
 ```
 5. Run `npm run dev` start the development server.
 
+This is an already hosted server for this application.
+https://whoget-app-server.onrender.com
+
 ## API endpoints
 
 ### Fetch all asks
