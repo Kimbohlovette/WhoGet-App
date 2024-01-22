@@ -20,7 +20,7 @@ export const deleteAsk = async (req: Request, res: Response) => {
 		return res.status(200).json({
 			success: true,
 			message: 'delete operation successful',
-			deletedId: deleted._id.toString(),
+			deletedId: deleted.id,
 		});
 	} catch (error) {
 		return res.status(500).json({
