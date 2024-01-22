@@ -45,7 +45,6 @@ export const getAskById = async (req: Request, res: Response) => {
 			});
 		}
 	} catch (error) {
-		console.log(error);
 		return res.status(422).json({
 			success: false,
 			message: 'the request params is not valid',

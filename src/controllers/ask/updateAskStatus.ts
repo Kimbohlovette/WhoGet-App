@@ -49,7 +49,6 @@ export const updateAskStatus = async (req: Request, res: Response) => {
 			});
 		}
 	} catch (error) {
-		//console.log(error);
 		return res.status(404).json({
 			success: false,
 			message: 'resource not found',

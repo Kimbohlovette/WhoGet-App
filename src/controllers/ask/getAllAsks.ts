@@ -25,7 +25,6 @@ export const getAllAsks = async (req: Request, res: Response) => {
 			size: asks.length,
 		});
 	} catch (error) {
-		console.log(error);
 		return res
 			.status(400)
 			.json({ success: false, message: 'bad request body' });

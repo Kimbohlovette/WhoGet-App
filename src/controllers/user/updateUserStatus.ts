@@ -37,7 +37,6 @@ export const updateUserStatus = async (req: Request, res: Response) => {
 			});
 		}
 	} catch (error) {
-		// console.log(error);
 		return res.status(422).json({
 			success: false,
 			message: 'unprocessible',

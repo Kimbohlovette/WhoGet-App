@@ -51,7 +51,6 @@ export const search = async (req: Request, res: Response) => {
 			categories,
 		});
 	} catch (error) {
-		console.log(error);
 		res.status(404).json({
 			success: false,
 			message: 'resource_not_found',

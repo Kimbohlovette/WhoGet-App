@@ -30,7 +30,6 @@ export const getPaginatedUsers = async (req: Request, res: Response) => {
 			users: users,
 		});
 	} catch (error) {
-		console.log(error);
 		return res.status(422).json({
 			success: false,
 			message: 'unprocessible request',

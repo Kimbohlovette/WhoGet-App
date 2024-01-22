@@ -21,7 +21,6 @@ export const createAsk = async (req: Request, res: Response) => {
 				.json({ success: false, message: 'userId is not valid' });
 		}
 	} catch (error) {
-		console.log(error);
 		res.status(404).json({
 			success: false,
 			message: 'resource does not exist',

@@ -38,7 +38,6 @@ export const filterAsks = async (req: Request, res: Response) => {
 			asks,
 		});
 	} catch (error) {
-		console.log;
 		return res.status(499).json({
 			message: 'error_processing_filter',
 			success: false,
