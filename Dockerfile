@@ -11,4 +11,4 @@ COPY . .
 ENV API_URL=http://0.0.0.0:8080/
 EXPOSE 3000
 
-CMD ["npm", "dev"]
+CMD ["npm", "run dev"]
